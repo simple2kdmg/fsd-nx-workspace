@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'fsd-nx-workspace-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less'],
+    selector: 'fsd-angular-app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  title = 'angular-app';
+    get initialize(): boolean {
+        console.count('app component redrawn');
+        return true;
+    }
 }

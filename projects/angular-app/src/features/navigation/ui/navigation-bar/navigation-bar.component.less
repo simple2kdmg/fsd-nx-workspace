@@ -1,0 +1,31 @@
+:host {
+    display: block;
+}
+
+.container {
+    display: flex;
+    height: 3em;
+    padding: 0.5em 1em;
+    background-color: #1c9588;
+    box-shadow: 0 0 16px 0 #656565;
+
+    &__link {
+        color: white;
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 0.25em;
+        margin-right: 1em;
+        cursor: pointer;
+
+        &:hover {
+            color: whitesmoke;
+            border-bottom-color: whitesmoke;
+            opacity: 0.9;
+            transition: 0.3s;
+        }
+
+        &_active {
+            border-bottom: 3px solid white;
+        }
+    }
+}

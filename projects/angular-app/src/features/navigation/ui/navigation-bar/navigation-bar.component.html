@@ -1,0 +1,12 @@
+<div class="container">
+    <div
+        *ngFor="let item of navItems"
+        class="container__link"
+        (click)="onLinkClick(item.relativeUrl)"
+        [class.container__link_active]="
+            (currentUrl$ | async) === item.relativeUrl
+        "
+    >
+        {{ item.pageTitle }}
+    </div>
+</div>
