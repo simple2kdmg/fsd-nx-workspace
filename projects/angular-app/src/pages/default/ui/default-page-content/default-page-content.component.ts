@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { DefaultPageContentData } from '../../model/default-page-content-data.model';
 
 @Component({
     selector: 'fsd-default-page-content',
@@ -7,5 +8,6 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DefaultPageContentComponent {
-    @Input() id: string | null = null;
+    @Input() data: DefaultPageContentData | null = null;
+    @Input() primitiveData?: number | null = 0;
 }

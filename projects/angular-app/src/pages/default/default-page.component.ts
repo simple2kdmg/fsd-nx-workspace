@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DefaultPageContentData } from './model/default-page-content-data.model';
 
 @Component({
     templateUrl: 'default-page.component.html',
@@ -6,9 +7,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DefaultPageComponent {
-    parentId: string | null = null;
+    data: DefaultPageContentData | null = null;
+    primitiveData?: number;
 
     toggleContentId(): void {
-        this.parentId = !this.parentId ? '123' : null;
+        this.data = !this.data ? { id: '12345', name: 'test-data' } : null;
+        this.primitiveData = !this.primitiveData ? 5 : undefined;
     }
 }
