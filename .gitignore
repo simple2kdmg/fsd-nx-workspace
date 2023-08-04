@@ -4,6 +4,7 @@
 dist
 tmp
 /out-tsc
+/modern
 
 # dependencies
 node_modules

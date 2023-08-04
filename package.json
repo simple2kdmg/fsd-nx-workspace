@@ -3,7 +3,11 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "angular:serve": "nx run angular-app:serve:development"
+        "angular:serve": "nx run angular-app:serve:development",
+        "build:modern": "node --max_old_space_size=12288 nx run angular-app:build:modern",
+        "docker:build": "docker build -t angular-app-e2e -f angular-app-e2e-build.Dockerfile .",
+        "docker:run": "docker run --rm --mount type=bind,source=$(pwd)/projects/angular-app-e2e,target=/app/projects/angular-app-e2e",
+        "integrations:ci": "npm run docker:build && npm run docker:run angular-app-e2e:latest npm run angular-app:integrations:ci"
     },
     "private": true,
     "devDependencies": {
