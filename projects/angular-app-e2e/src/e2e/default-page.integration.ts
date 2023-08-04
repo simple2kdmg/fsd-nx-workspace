@@ -7,5 +7,7 @@ describe('DefaultPage integration', () => {
         const defaultPage = new DefaultPageObject();
 
         defaultPage.title.should('have.text', 'Default page');
+
+        cy.get('body').matchImageSnapshot('default-page-full');
     });
 });

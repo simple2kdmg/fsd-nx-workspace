@@ -1,15 +1,16 @@
 import { defineConfig } from 'cypress';
+import { preparePlugins } from './src/plugins';
 
 export default defineConfig({
     e2e: {
         baseUrl: 'http://localhost:8040',
         specPattern: 'src/e2e/**/*.ts',
-        // setupNodeEvents: plugins,
+        setupNodeEvents: preparePlugins,
         supportFile: './src/support/index.ts',
     },
     fileServerFolder: '.',
     fixturesFolder: './src/fixtures',
-    // screenshotsFolder: './src/screenshots',
+    screenshotsFolder: './src/screenshots',
     video: false,
     chromeWebSecurity: false,
     viewportWidth: 1440,

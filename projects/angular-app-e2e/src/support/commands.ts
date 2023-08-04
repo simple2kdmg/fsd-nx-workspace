@@ -1,4 +1,6 @@
+import { AUTOMATION_ID } from '../constants/automation-id-param.const';
 import { UserAgent } from '../enums/user-agent.enum';
+import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -35,7 +37,7 @@ Cypress.Commands.overwrite(
     }
 );
 
-const byAutomationId = (id: string) => `[automation-id=${id}]`;
+const byAutomationId = (id: string) => `[${AUTOMATION_ID}=${id}]`;
 
 Cypress.Commands.add(
     'getByAutomationId',
@@ -48,6 +50,26 @@ Cypress.Commands.add(
             : cy.get(byAutomationId(id));
     }
 );
+
+Cypress.SelectorPlayground.defaults({
+    onElement: ($el) => {
+        const found = $el.closest(`[${AUTOMATION_ID}]`);
+        const customId = found.attr(`${AUTOMATION_ID}`);
+
+        if (customId) {
+            return `[${AUTOMATION_ID}="${customId}"]`;
+        }
+    },
+});
+
+addMatchImageSnapshotCommand({
+    disableTimersAndAnimations: true,
+    capture: 'viewport',
+    failureThresholdType: 'pixel',
+    failureThreshold: 5,
+    customDiffDir: '/src/diffs',
+    comparisonMethod: `ssim`,
+});
 
 function setUserAgent(userAgent?: UserAgent) {
     userAgent &&
