@@ -17,6 +17,13 @@ const routes: Routes = [
                     import('../pages/second').then((m) => m.SecondtPageModule),
             },
             {
+                path: ApplicationPath.CustomElements,
+                loadChildren: () =>
+                    import('../pages/custom-elements').then(
+                        (m) => m.CustomElementsPageModule
+                    ),
+            },
+            {
                 path: '',
                 redirectTo: `${ApplicationPath.Default}`,
                 pathMatch: 'full',

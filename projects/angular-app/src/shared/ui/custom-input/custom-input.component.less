@@ -1,0 +1,23 @@
+@import 'variables';
+
+:host {
+    display: block;
+}
+
+.container {
+    border-radius: 5px;
+    box-shadow: @box-shadow-default;
+
+    &__input {
+        width: 100%;
+        padding: .25em;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background: @background-color-default;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        appearance: none;
+    }
+}

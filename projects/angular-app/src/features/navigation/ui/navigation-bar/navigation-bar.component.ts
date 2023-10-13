@@ -24,6 +24,12 @@ export class NavigationBarComponent {
             relativeUrl: ApplicationPath.Second,
             sortOrder: 2,
         },
+        {
+            pageCode: '',
+            pageTitle: 'Custom Elements',
+            relativeUrl: ApplicationPath.CustomElements,
+            sortOrder: 3,
+        },
     ];
     readonly currentUrl$ = this.navigationService.urlWithoutQuery$;
 

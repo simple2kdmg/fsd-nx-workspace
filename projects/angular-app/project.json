@@ -20,6 +20,9 @@
                     "projects/angular-app/src/assets"
                 ],
                 "styles": ["projects/angular-app/src/styles.less"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["projects/angular-app/src/assets/styles"]
+                },
                 "scripts": []
             },
             "configurations": {
@@ -80,6 +83,9 @@
         },
         "serve": {
             "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "port": 4500
+            },
             "configurations": {
                 "production": {
                     "browserTarget": "angular-app:build:production"

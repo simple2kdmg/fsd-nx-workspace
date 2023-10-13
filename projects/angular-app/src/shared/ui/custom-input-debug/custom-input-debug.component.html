@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <button (click)="toggleValue()">Toggle value</button>
+    <button (click)="toggleReadonly()">Toggle readonly</button>
+    <button (click)="toggleDisabled()">Toggle disabled</button>
+
+    <fsd-custom-input
+        class="wrapper__input"
+        [readonly]="readonly"
+        [(ngModel)]="value"
+    ></fsd-custom-input>
+</div>

@@ -1,2 +1,7 @@
 <div>DefaultPageComponentContent, id: {{ data?.id }}</div>
 <div>DefaultPageComponentContent, primitiveData: {{ primitiveData }}</div>
+
+<button #testButton (click)="onClick()">Check cnange detection</button>
+
+<!-- debug -->
+<span style="display: none">{{ initialize }}</span>

@@ -28,5 +28,8 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "paths": {
+    "lib": ["./src/lib/index.ts"],
   }
 }
