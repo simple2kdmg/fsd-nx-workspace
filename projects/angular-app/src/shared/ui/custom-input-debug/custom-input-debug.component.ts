@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'fsd-custom-input-debug',
@@ -6,20 +7,47 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     templateUrl: 'custom-input-debug.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomInputDebugComponent {
-    value: string | null = null;
+export class CustomInputDebugComponent implements OnInit {
+    // value: string | null = null;
+    inputControl = new FormControl('');
+    // disabled = false;
     readonly = false;
-    disabled = false;
+
+    get disabled(): boolean {
+        return this.inputControl.disabled;
+    }
+
+    constructor(private readonly cdRef: ChangeDetectorRef){}
+
+    ngOnInit(): void {
+        this.inputControl.valueChanges.subscribe((value) =>
+            console.log(`Value: `, value)
+        );
+    }
 
     toggleReadonly(): void {
         this.readonly = !this.readonly;
     }
 
     toggleDisabled(): void {
-        this.disabled = !this.disabled;
+        if (this.inputControl.disabled) {
+            this.inputControl.enable();
+        } else {
+            this.inputControl.disable();
+        }
     }
 
     toggleValue(): void {
-        this.value = this.value ? null : 'Toggled value';
+        // this.value = this.value ? null : 'Toggled value';
+        const currentValue = this.inputControl.value;
+        this.inputControl.setValue(currentValue ? null : 'Toggled value');
+    }
+
+    test(key: string): void {
+        console.log('TEST ', key);
+    }
+
+    onIconClick(): void {
+        console.log('Icon click');
     }
 }

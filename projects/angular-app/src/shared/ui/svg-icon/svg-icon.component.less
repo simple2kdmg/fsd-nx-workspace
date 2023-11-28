@@ -1,0 +1,28 @@
+:host {
+    display: inline-flex;
+    align-items: center;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.svg-container {
+    display: inline-flex;
+
+    :host[data-size='s'] & {
+        width: 16px;
+        height: 16px;
+    }
+
+    :host[data-size='m'] & {
+        width: 20px;
+        height: 20px;
+    }
+
+    :host[data-size='l'] & {
+        width: 16px;
+        height: 16px;
+        transform: scale(2);
+    }
+}

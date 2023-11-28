@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FsdCustomInputComponent } from './custom-input.component';
+import { SvgIconModule } from '../svg-icon/svg-icon.module';
 
 @NgModule({
     declarations: [FsdCustomInputComponent],
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, ReactiveFormsModule, SvgIconModule],
     exports: [FsdCustomInputComponent],
 })
 export class FsdCustomInputModule {}

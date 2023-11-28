@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { SvgIconName, SvgIconSize } from '../../shared/model';
 
 @Component({
     templateUrl: 'custom-elements-page.component.html',
@@ -7,8 +8,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class CustomElementsPageComponent {
     value: string | null = null;
+    iconName: SvgIconName | null = 'ShoppingCart';
+    iconSize: SvgIconSize = 's';
 
-    onToggleValue(): void {
-        this.value = this.value ? null : 'initial value';
+    constructor() {}
+
+    onToggleIconName(): void {
+        this.iconName =
+            this.iconName === 'ShoppingCart' ? 'Delete' : 'ShoppingCart';
+    }
+
+    onToggleIconSize(): void {
+        this.iconSize = this.iconSize === 's' ? 'l' : 's';
     }
 }

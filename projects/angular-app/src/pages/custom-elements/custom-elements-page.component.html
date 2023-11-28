@@ -1,6 +1,20 @@
 <div class="content">
     <h3>Custom Elements Page</h3>
 
+    <div class="content__item">
+        <fsd-check-outline-icon-test></fsd-check-outline-icon-test>
+    </div>
+
+    <fsd-svg-icon [name]="iconName" [size]="iconSize"></fsd-svg-icon>
+
+    <div class="content__item">
+        <button (click)="onToggleIconName()">Toggle icon name</button>
+    </div>
+
+    <div class="content__item">
+        <button (click)="onToggleIconSize()">Toggle icon size</button>
+    </div>
+
     <fsd-custom-input-debug class="content__item"></fsd-custom-input-debug>
 
     <fsd-breakpoints-debug class="content__item"></fsd-breakpoints-debug>

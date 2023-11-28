@@ -1,7 +1,22 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DefaultPageContentData } from './model/default-page-content-data.model';
 import { BreakpointsService } from '../../shared/model';
-import { BehaviorSubject, Observable, Subscription, interval, of, shareReplay, timer } from 'rxjs';
+import {
+    BehaviorSubject,
+    Observable,
+    ReplaySubject,
+    Subject,
+    Subscription,
+    combineLatest,
+    interval,
+    map,
+    of,
+    share,
+    shareReplay,
+    startWith,
+    tap,
+    timer,
+} from 'rxjs';
 
 @Component({
     templateUrl: 'default-page.component.html',
@@ -13,9 +28,13 @@ export class DefaultPageComponent {
     primitiveData?: number;
 
     constructor(private readonly breakpointsService: BreakpointsService) {
-        this.breakpointsService.matchBreakpoint('sm').subscribe(matched => console.log(`1 MATCHED SM: `, matched));
+        this.breakpointsService
+            .matchBreakpoint('sm')
+            .subscribe((matched) => console.log(`1 MATCHED SM: `, matched));
 
-        
+        const repl1$ = new Subject<number>();
+
+        repl1$.pipe(startWith(0)).subscribe(x => console.log(`Replay with startWith`, x));
     }
 
     get initialize(): boolean {

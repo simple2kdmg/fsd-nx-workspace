@@ -1,8 +1,18 @@
-<div class="container">
+<div class="input-wrapper" [class._disabled]="disabled$ | async">
     <input
-        class="container__input"
+        #input
+        class="input-wrapper__input"
         [readonly]="readonly"
-        [disabled]="disabled"
-        [(ngModel)]="internalValue"
+        (keyup.enter)="onIconClick()"
+        (keyup.esc)="onReset()"
+        [formControl]="ngControl.control"
     />
+
+    <fsd-svg-icon
+        *ngIf="!readonly"
+        class="input-wrapper__icon"
+        name="Search"
+        size="m"
+        (click)="onIconClick()"
+    ></fsd-svg-icon>
 </div>

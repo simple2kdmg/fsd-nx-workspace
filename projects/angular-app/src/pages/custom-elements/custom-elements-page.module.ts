@@ -3,7 +3,12 @@ import { Route, RouterModule } from '@angular/router';
 import { CustomElementsPageComponent } from './custom-elements-page.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BreakpointsDebugModule, CustomInputDebugModule } from '../../shared/ui';
+import {
+    BreakpointsDebugModule,
+    CheckOutlineIcon16TestComponent,
+    CustomInputDebugModule,
+    SvgIconModule,
+} from '../../shared/ui';
 
 const routes: Route[] = [
     {
@@ -20,6 +25,8 @@ const routes: Route[] = [
         ReactiveFormsModule,
         CustomInputDebugModule,
         BreakpointsDebugModule,
+        CheckOutlineIcon16TestComponent,
+        SvgIconModule,
     ],
     declarations: [CustomElementsPageComponent],
 })
