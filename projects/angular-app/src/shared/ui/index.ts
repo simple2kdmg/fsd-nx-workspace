@@ -8,3 +8,5 @@ export * from './icons/16px';
 export * from './svg-icon/svg-icon.module';
 export * from './svg-icon/svg-icon-registry.service';
 export * from './svg-icon/svg-icon.component';
+export * from './xlsx-debug/xlsx-debug.module';
+export * from './xlsx-debug/xlsx-debug.component';

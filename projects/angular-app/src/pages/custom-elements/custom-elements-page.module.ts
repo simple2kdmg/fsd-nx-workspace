@@ -8,6 +8,7 @@ import {
     CheckOutlineIcon16TestComponent,
     CustomInputDebugModule,
     SvgIconModule,
+    XlsxDebugModule,
 } from '../../shared/ui';
 
 const routes: Route[] = [
@@ -27,6 +28,7 @@ const routes: Route[] = [
         BreakpointsDebugModule,
         CheckOutlineIcon16TestComponent,
         SvgIconModule,
+        XlsxDebugModule,
     ],
     declarations: [CustomElementsPageComponent],
 })
