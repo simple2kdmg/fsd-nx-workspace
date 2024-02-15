@@ -1,0 +1,8 @@
+<div class="cs-wrapper">
+  <div class="cs-wrapper__input">{{ valueLabel$ | async }}</div>
+  <div class="cs-wrapper__dropdown">
+    <div *ngFor="let optionLabel of optionLabels$ | async">
+      {{ optionLabel }}
+    </div>
+  </div>
+</div>

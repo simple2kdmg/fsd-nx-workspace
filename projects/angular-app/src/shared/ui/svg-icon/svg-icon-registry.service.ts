@@ -5,9 +5,9 @@ import { Observable, ReplaySubject, map } from 'rxjs';
 import { SvgIconName, SvgIconSize } from '../../model';
 
 const SVG_ICON_SIZE_MAP: Record<SvgIconSize, string> = {
-  xs: '12px',
-  s: '16px',
-  m: '20px',
+  s: '12px',
+  m: '16px',
+  l: '20px',
 };
 
 @Injectable({ providedIn: 'root' })

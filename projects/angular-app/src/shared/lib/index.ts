@@ -7,3 +7,5 @@ export * from './utils/coerce-array.util';
 export * from './utils/inject-ng-control.util';
 export * from './pipes/mapper-pipe.module';
 export * from './pipes/mapper.pipe';
+export * from './directives/click-outside.directive';
+export * from './directives/click-outside.module';

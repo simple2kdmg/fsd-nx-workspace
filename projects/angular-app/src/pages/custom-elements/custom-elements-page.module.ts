@@ -7,6 +7,7 @@ import {
     BreakpointsDebugModule,
     CheckOutlineIcon16TestComponent,
     CustomInputDebugModule,
+    CustomSelectDebugModule,
     SvgIconModule,
     XlsxDebugModule,
 } from '../../shared/ui';
@@ -25,6 +26,7 @@ const routes: Route[] = [
         FormsModule,
         ReactiveFormsModule,
         CustomInputDebugModule,
+        CustomSelectDebugModule,
         BreakpointsDebugModule,
         CheckOutlineIcon16TestComponent,
         SvgIconModule,

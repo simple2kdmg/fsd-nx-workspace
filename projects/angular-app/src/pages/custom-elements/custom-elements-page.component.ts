@@ -19,6 +19,6 @@ export class CustomElementsPageComponent {
     }
 
     onToggleIconSize(): void {
-        this.iconSize = this.iconSize === 's' ? 'l' : 's';
+        this.iconSize = this.iconSize === 's' ? 'm' : 's';
     }
 }

@@ -1,1 +1,1 @@
-export type SvgIconSize = 'xs' | 's' | 'm';
+export type SvgIconSize = 's' | 'm' | 'l';
