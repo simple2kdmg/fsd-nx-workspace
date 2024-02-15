@@ -40,7 +40,7 @@ export class CustomInputDebugComponent implements OnInit {
     toggleValue(): void {
         // this.value = this.value ? null : 'Toggled value';
         const currentValue = this.inputControl.value;
-        this.inputControl.setValue(currentValue ? null : 'Toggled value');
+        this.inputControl.patchValue(currentValue ? null : 'Toggled value');
     }
 
     test(key: string): void {

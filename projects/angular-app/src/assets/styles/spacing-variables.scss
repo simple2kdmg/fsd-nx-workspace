@@ -1,0 +1,92 @@
+:root {
+  /**
+  * @tokens SpacingsRegular
+  * @presenter Spacing
+  */
+  --spacing-0: 0;
+  --spacing-px: 1px;
+  --spacing-nano: 2px;
+  --spacing-xxs: 4px; /** @deprecated */
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 56px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 72px;
+  --spacing-6xl: 80px;
+  --spacing-7xl: 96px;
+  --spacing-8xl: 128px;
+  --spacing-9xl: 144px;
+
+  /**
+  * @tokens SpacingsSpecial
+  * @presenter Spacing
+  */
+  --spacing-label: 22px;
+  --spacing-special-l: 28px;
+  --spacing-special-m: 12px;
+  --spacing-special-s: 10px;
+  --spacing-special-xs: 7px;
+
+  /**
+  * @tokens SpacingsResponsive
+  * @presenter Spacing
+  */
+  --spacing-responsive-xxs: 0.25rem; /** @deprecated */
+  --spacing-responsive-2xs: 0.25rem;
+  --spacing-responsive-xs: 0.5rem;
+  --spacing-responsive-s: 1rem;
+  --spacing-responsive-m: 1.5rem;
+  --spacing-responsive-l: 2rem;
+  --spacing-responsive-xl: 3rem;
+  --spacing-responsive-2xl: 3.5rem;
+  --spacing-responsive-3xl: 4.5rem;
+  --spacing-responsive-modular: 4.5rem;
+}
+
+/* TODO: verify if this is needed */
+@media (width >= 22.5rem) {
+  :root {
+    --spacing-responsive-xl: 2.5rem;
+    --spacing-responsive-2xl: 3rem;
+    --spacing-responsive-3xl: 4rem;
+  }
+}
+
+@media (width >= 48rem) {
+  :root {
+    --spacing-responsive-xl: 3rem;
+    --spacing-responsive-2xl: 3.5rem;
+    --spacing-responsive-3xl: 4.5rem;
+  }
+}
+
+@media (width >= 64rem) {
+  :root {
+    --spacing-responsive-xl: 3.5rem;
+    --spacing-responsive-2xl: 4rem;
+    --spacing-responsive-3xl: 5rem;
+  }
+}
+
+@media (width >= 80rem) {
+  :root {
+    --spacing-responsive-m: 2rem;
+    --spacing-responsive-l: 2.5rem;
+    --spacing-responsive-xl: 4rem;
+    --spacing-responsive-2xl: 4.5rem;
+    --spacing-responsive-3xl: 6rem;
+  }
+}
+
+@media (width >= 90rem) {
+  :root {
+    --spacing-responsive-xl: 4.5rem;
+    --spacing-responsive-2xl: 5rem;
+    --spacing-responsive-3xl: 8rem;
+  }
+}

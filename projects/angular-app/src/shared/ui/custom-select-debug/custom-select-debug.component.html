@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <button (click)="pushOption()">Push</button>
+    <button (click)="popOption()">Pop</button>
+    <button (click)="selectWrong()">Select wrong option</button>
+
+    <fsd-custom-select
+        class="wrapper__select"
+        keyProperty="id"
+        labelProperty="value"
+        [formControl]="selectControl"
+        [options]="selectOptions$ | async"
+    ></fsd-custom-select>
+</div>

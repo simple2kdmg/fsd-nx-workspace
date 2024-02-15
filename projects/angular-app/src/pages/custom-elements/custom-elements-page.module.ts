@@ -8,6 +8,7 @@ import {
     CheckOutlineIcon16TestComponent,
     CustomInputDebugModule,
     FsdInputTestingModule,
+    CustomSelectDebugModule,
     SvgIconModule,
     XlsxDebugModule,
 } from '../../shared/ui';
@@ -26,6 +27,7 @@ const routes: Route[] = [
         FormsModule,
         ReactiveFormsModule,
         CustomInputDebugModule,
+        CustomSelectDebugModule,
         BreakpointsDebugModule,
         CheckOutlineIcon16TestComponent,
         SvgIconModule,
