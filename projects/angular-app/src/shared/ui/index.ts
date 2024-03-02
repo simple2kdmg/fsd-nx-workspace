@@ -10,3 +10,5 @@ export * from './svg-icon/svg-icon-registry.service';
 export * from './svg-icon/svg-icon.component';
 export * from './xlsx-debug/xlsx-debug.module';
 export * from './xlsx-debug/xlsx-debug.component';
+export * from './input-testing/input-testing.component';
+export * from './input-testing/input-testing.module';
