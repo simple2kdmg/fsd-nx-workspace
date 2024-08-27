@@ -1,7 +1,20 @@
 <div>DefaultPageComponentContent, id: {{ data?.id }}</div>
 <div>DefaultPageComponentContent, primitiveData: {{ primitiveData }}</div>
 
-<button #testButton (click)="onClick()">Check cnange detection</button>
+<button (click)="onClick()">Check cnange detection #1</button>
+<button #testButton>Check cnange detection #2</button>
+
+<h4>{{ testData$ | async }}</h4>
 
 <!-- debug -->
 <span style="display: none">{{ initialize }}</span>
+
+<div class="outer-block" (click)="onOuterClick($event)">
+  Outer block text
+
+  <div class="inner-block" (click)="onInnerClick($event)">
+    Inner block text
+  </div>
+
+</div>
+

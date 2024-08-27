@@ -21,7 +21,9 @@ export class CustomSelectDebugComponent implements OnInit {
 
     selectOptions$ = new BehaviorSubject(this.selectOptions);
 
-    constructor() {}
+    get disabled(): boolean {
+        return this.selectControl.disabled;
+    }
 
     ngOnInit(): void {
         this.selectControl.valueChanges.subscribe((value) => console.log(`Select value: `, value));
@@ -48,5 +50,13 @@ export class CustomSelectDebugComponent implements OnInit {
 
     selectWrong(): void {
         this.selectControl.patchValue({ id: 'id_8', value: 'value_8' });
+    }
+
+    toggleDisabled(): void {
+        if (this.selectControl.disabled) {
+            this.selectControl.enable();
+        } else {
+            this.selectControl.disable();
+        }
     }
 }

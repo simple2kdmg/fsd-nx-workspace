@@ -8,7 +8,7 @@ import {
     OnDestroy,
 } from '@angular/core';
 import { DefaultPageContentData } from '../../model/default-page-content-data.model';
-import { Subject } from 'rxjs';
+import { fromEvent, ReplaySubject, Subject, takeUntil } from 'rxjs';
 
 @Component({
     selector: 'fsd-default-page-content',
@@ -22,6 +22,8 @@ export class DefaultPageContentComponent implements AfterViewInit, OnDestroy {
 
     @ViewChild('testButton') testButton: ElementRef | null = null;
 
+    readonly testData$ = new ReplaySubject<string>(1);
+
     private readonly destroy$ = new Subject();
 
     get initialize(): boolean {
@@ -31,15 +33,25 @@ export class DefaultPageContentComponent implements AfterViewInit, OnDestroy {
 
     onClick(): void {
         console.log('This will trigger change detection');
+        this.testData$.next('From Angular (click) handler');
+    }
+
+    onOuterClick(e: Event): void {
+        console.log('outer click, e: ', e);
+    }
+
+    onInnerClick(e: Event): void {
+        e.stopPropagation();
+        console.log('inner click, e: ', e);
     }
 
     ngAfterViewInit(): void {
         if (this.testButton) {
-            /* fromEvent(this.testButton.nativeElement, 'click')
+            fromEvent(this.testButton.nativeElement, 'click')
                 .pipe(takeUntil(this.destroy$))
                 .subscribe(() => {
-                    console.log('Check change detection!');
-                }); */
+                    this.testData$.next('From RxJs fromEvent click handler');
+                });
         }
     }
 

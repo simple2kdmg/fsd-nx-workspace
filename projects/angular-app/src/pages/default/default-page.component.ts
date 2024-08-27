@@ -8,15 +8,20 @@ import {
     Subject,
     Subscription,
     combineLatest,
+    debounceTime,
+    fromEvent,
     interval,
     map,
+    mergeMap,
     of,
     share,
     shareReplay,
     startWith,
     tap,
     timer,
+    toArray,
 } from 'rxjs';
+import { buffer, switchMap, window } from 'rxjs/operators';
 
 @Component({
     templateUrl: 'default-page.component.html',
@@ -27,15 +32,7 @@ export class DefaultPageComponent {
     data: DefaultPageContentData | null = null;
     primitiveData?: number;
 
-    constructor(private readonly breakpointsService: BreakpointsService) {
-        this.breakpointsService
-            .matchBreakpoint('sm')
-            .subscribe((matched) => console.log(`1 MATCHED SM: `, matched));
-
-        const repl1$ = new Subject<number>();
-
-        repl1$.pipe(startWith(0)).subscribe(x => console.log(`Replay with startWith`, x));
-    }
+    constructor(private readonly breakpointsService: BreakpointsService) {}
 
     get initialize(): boolean {
         console.count('DefaultPageComponent redrawn');

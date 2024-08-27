@@ -30,8 +30,8 @@ export class FsdCustomSelectComponent<T> implements ControlValueAccessor {
     readonly value$ = new ReplaySubject<T | null | undefined>(1);
     readonly options$ = new ReplaySubject<T[]>(1);
 
-    readonly valueLabel$ = combineLatest([this.value$, this.options$]).pipe(
-        map(([value, options]) => this.validateValue(value, options)),
+    readonly valueLabel$ = this.value$.pipe(
+        map((value) => this.validateValue(value)),
         distinctUntilChanged(this.isEqual),
         tap((value) => this.onChange(value)),
         map((value) => this.getLabel(value))
@@ -50,12 +50,8 @@ export class FsdCustomSelectComponent<T> implements ControlValueAccessor {
         this.onTouch = fn;
     }
 
-    private validateValue(value: T | null | undefined, options: T[]): T | null {
-        if (value === null || value === undefined || value === '' || !options.length) {
-            return null;
-        }
-
-        return options.some((option) => this.getKey(option) === this.getKey(value)) ? value : null;
+    private validateValue(value: T | null | undefined): T | null {
+        return value === null || value === undefined || value === '' ? null : value;
     }
 
     private isEqual(value1: T | null, value2: T | null): boolean {
