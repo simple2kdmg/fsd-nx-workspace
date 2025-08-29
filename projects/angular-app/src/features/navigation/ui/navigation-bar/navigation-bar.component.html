@@ -1,12 +1,11 @@
 <div class="container">
+  @for (item of navItems; track item.pageCode) {
     <div
-        *ngFor="let item of navItems"
-        class="container__link"
-        (click)="onLinkClick(item.relativeUrl)"
-        [class.container__link_active]="
-            (currentUrl$ | async) === item.relativeUrl
-        "
+      class="container__link"
+      (click)="onLinkClick(item.relativeUrl)"
+      [class.container__link_active]="(currentUrl$ | async) === item.relativeUrl"
     >
-        {{ item.pageTitle }}
+      {{ item.pageTitle }}
     </div>
+  }
 </div>

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SvgIconComponent } from './svg-icon.component';
 import { SvgIconRegistryService } from './svg-icon-registry.service';
 import { anything, instance, mock, verify, when } from 'ts-mockito';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DebugElement } from '@angular/core';
 import { ReplaySubject, throwError } from 'rxjs';
 import { By, SafeHtml } from '@angular/platform-browser';
 import { SvgIconName, SvgIconSize } from '../../model';
@@ -11,12 +11,14 @@ import { SvgIconName, SvgIconSize } from '../../model';
 const safeHtmlStub = {} as SafeHtml;
 
 @Component({
-  template: `<zms-svg-icon [name]="iconName" [size]="iconSize"></zms-svg-icon>`,
+  standalone: true,
+  imports: [SvgIconComponent],
+  template: `<fsd-svg-icon [name]="iconName" [size]="iconSize"></fsd-svg-icon>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 class TestHostComponent {
   iconName: SvgIconName | null = null;
-  iconSize: SvgIconSize | null = null;
+  iconSize: SvgIconSize = 's';
 }
 
 describe('Svg Icon Component', () => {

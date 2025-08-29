@@ -5,5 +5,6 @@ export * from './constants/noop-value-accessor.const';
 export * from './utils/sync-delay.util';
 export * from './utils/coerce-array.util';
 export * from './utils/inject-ng-control.util';
-export * from './pipes/mapper-pipe.module';
-export * from './pipes/mapper.pipe';
+export * from './pipes/apply.pipe';
+export * from './directives/bem.directive';
+export * from './decorators/ssr';

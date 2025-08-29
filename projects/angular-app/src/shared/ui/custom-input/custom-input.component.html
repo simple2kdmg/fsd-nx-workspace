@@ -1,18 +1,19 @@
 <div class="input-wrapper" [class._disabled]="disabled$ | async">
-    <input
-        #input
-        class="input-wrapper__input"
-        [readonly]="readonly"
-        (keyup.enter)="onIconClick()"
-        (keyup.esc)="onReset()"
-        [formControl]="ngControl.control"
-    />
+  <input
+    #input
+    class="input-wrapper__input"
+    [readonly]="readonly"
+    (keyup.enter)="onIconClick()"
+    (keyup.esc)="onReset()"
+    [formControl]="ngControl.control"
+  />
 
+  @if (!readonly) {
     <fsd-svg-icon
-        *ngIf="!readonly"
-        class="input-wrapper__icon"
-        name="Search"
-        size="m"
-        (click)="onIconClick()"
+      class="input-wrapper__icon"
+      name="Search"
+      size="m"
+      (click)="onIconClick()"
     ></fsd-svg-icon>
+  }
 </div>

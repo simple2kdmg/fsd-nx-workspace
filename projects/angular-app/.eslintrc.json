@@ -9,7 +9,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": "fsdNxWorkspace",
+                        "prefix": "fsd",
                         "style": "camelCase"
                     }
                 ],

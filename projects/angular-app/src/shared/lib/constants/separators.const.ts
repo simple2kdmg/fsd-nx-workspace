@@ -1,0 +1,2 @@
+export const LIST_QUERY_PARAM_SEPARATOR = ',';
+export const QUERY_PARAM_KEY_VALUE_SEPARATOR = ':';

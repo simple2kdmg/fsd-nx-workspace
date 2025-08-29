@@ -1,4 +1,12 @@
-<div *ngIf="matchXs$ | async" class="item">XS Breakpoint</div>
-<div *ngIf="matchSmAndMd$ | async" class="item">SM and MD Breakpoints</div>
-<div *ngIf="matchDownLg$ | async" class="item">Down LG Breakpoints</div>
-<div *ngIf="matchUpLg$ | async" class="item">Up Lg Breakpoints</div>
+@if (matchXs$ | async) {
+  <div class="item">XS Breakpoint</div>
+}
+@if (matchSmAndMd$ | async) {
+  <div class="item">SM and MD Breakpoints</div>
+}
+@if (matchDownLg$ | async) {
+  <div class="item">Down LG Breakpoints</div>
+}
+@if (matchUpLg$ | async) {
+  <div class="item">Up Lg Breakpoints</div>
+}

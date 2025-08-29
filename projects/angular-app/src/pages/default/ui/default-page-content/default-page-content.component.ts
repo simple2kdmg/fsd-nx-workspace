@@ -11,6 +11,7 @@ import { DefaultPageContentData } from '../../model/default-page-content-data.mo
 import { Subject } from 'rxjs';
 
 @Component({
+  standalone: true,
     selector: 'fsd-default-page-content',
     templateUrl: 'default-page-content.component.html',
     styleUrls: ['default-page-content.component.less'],
